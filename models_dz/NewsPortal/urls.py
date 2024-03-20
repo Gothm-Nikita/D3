@@ -2,7 +2,7 @@ from django.urls import path
 
 from django.contrib import admin
 from django.urls import path, include
-from .views import NewsList, PostDetail, PostSearch, PostCreate, PostUpdate, PostDelete
+from .views import NewsList, PostDetail, PostSearch, PostCreate, PostUpdate, PostDelete, subscriptions
 
 urlpatterns = [
 
@@ -15,5 +15,6 @@ urlpatterns = [
     path('articles/<int:pk>/edit/', PostUpdate.as_view(), name='articles_edit'),
     path('articles/create/', PostCreate.as_view(), name='articles_create'),
     path('articles/<int:pk>/edit/delete/', PostDelete.as_view(), name='articles_delete'),
+    path('subscriptions/', subscriptions, name='subscriptions'),
 
 ]
